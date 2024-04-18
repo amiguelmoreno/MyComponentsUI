@@ -39,8 +39,8 @@ export const WithIcon: Story = {
 export const Icon: Story = {
   args: {
     variant: "default",
-    size: "default",
-    children: <PlayIcon></PlayIcon>,
+    size: "icon",
+    children: <PlayIcon className='h-4 w-4'></PlayIcon>,
     onClick: () => {
       console.log("a");
     },

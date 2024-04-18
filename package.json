@@ -1,7 +1,8 @@
 {
   "name": "mycomponentsui",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
+  "description": "UI Library for Companies",
   "type": "module",
   "files": [
     "dist"

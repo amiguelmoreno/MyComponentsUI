@@ -5,7 +5,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
@@ -14,6 +14,7 @@ module.exports = {
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },
+      { allowExportNames: ["loader"] },
     ],
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/ban-types": "off",

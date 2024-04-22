@@ -22,9 +22,9 @@ export default meta;
 type Story = StoryObj<typeof Sheet>;
 
 export const Default: Story = {
-  args: {
-    children: (
-      <>
+  render: () => {
+    return (
+      <Sheet>
         <SheetTrigger>Open</SheetTrigger>
         <SheetContent>
           <SheetHeader>
@@ -35,7 +35,7 @@ export const Default: Story = {
             </SheetDescription>
           </SheetHeader>
         </SheetContent>
-      </>
-    ),
+      </Sheet>
+    );
   },
 };

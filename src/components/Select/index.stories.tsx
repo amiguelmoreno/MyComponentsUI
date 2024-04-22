@@ -21,9 +21,9 @@ export default meta;
 type Story = StoryObj<typeof Select>;
 
 export const Default: Story = {
-  args: {
-    children: (
-      <>
+  render: () => {
+    return (
+      <Select>
         <SelectTrigger className='w-[180px]'>
           <SelectValue placeholder='Theme' />
         </SelectTrigger>
@@ -32,7 +32,7 @@ export const Default: Story = {
           <SelectItem value='dark'>Dark</SelectItem>
           <SelectItem value='system'>System</SelectItem>
         </SelectContent>
-      </>
-    ),
+      </Select>
+    );
   },
 };

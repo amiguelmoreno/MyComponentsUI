@@ -15,12 +15,12 @@ export default meta;
 type Story = StoryObj<typeof Popover>;
 
 export const Default: Story = {
-  args: {
-    children: (
-      <>
+  render: () => {
+    return (
+      <Popover>
         <PopoverTrigger>Open</PopoverTrigger>
         <PopoverContent>Place content for the popover here.</PopoverContent>
-      </>
-    ),
+      </Popover>
+    );
   },
 };

@@ -15,12 +15,12 @@ export default meta;
 type Story = StoryObj<typeof Avatar>;
 
 export const Default: Story = {
-  args: {
-    children: (
-      <>
-        <AvatarImage src='https://github.com/shadcn.png' />
+  render: () => {
+    return (
+      <Avatar className='w-20 h-20'>
+        <AvatarImage src='https://github.com/shadcn.png' alt='avatar' />
         <AvatarFallback>CN</AvatarFallback>
-      </>
-    ),
+      </Avatar>
+    );
   },
 };

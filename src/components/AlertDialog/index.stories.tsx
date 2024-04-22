@@ -10,6 +10,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from ".";
+import { Button } from "../Button";
 
 const meta: Meta<typeof AlertDialog> = {
   title: "Components/AlertDialog",
@@ -25,10 +26,12 @@ export default meta;
 type Story = StoryObj<typeof AlertDialog>;
 
 export const Default: Story = {
-  args: {
-    children: (
-      <>
-        <AlertDialogTrigger>Open</AlertDialogTrigger>
+  render: () => {
+    return (
+      <AlertDialog>
+        <AlertDialogTrigger asChild>
+          <Button>Open</Button>
+        </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
@@ -42,7 +45,7 @@ export const Default: Story = {
             <AlertDialogAction>Continue</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
-      </>
-    ),
+      </AlertDialog>
+    );
   },
 };

@@ -7,6 +7,16 @@ import {
   CardDescription,
   CardContent,
 } from ".";
+import { Label } from "../Label";
+import { Input } from "../Input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../Select";
+import { Button } from "../Button";
 
 const meta: Meta<typeof Card> = {
   title: "Components/Card",
@@ -22,20 +32,44 @@ export default meta;
 type Story = StoryObj<typeof Card>;
 
 export const Default: Story = {
-  args: {
-    children: (
-      <>
+  render: () => {
+    return (
+      <Card className='w-[350px]'>
         <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
+          <CardTitle>Create project</CardTitle>
+          <CardDescription>
+            Deploy your new project in one-click.
+          </CardDescription>
         </CardHeader>
         <CardContent>
-          <p>Card Content</p>
+          <form>
+            <div className='grid w-full items-center gap-4'>
+              <div className='flex flex-col space-y-1.5'>
+                <Label htmlFor='name'>Name</Label>
+                <Input id='name' placeholder='Name of your project' />
+              </div>
+              <div className='flex flex-col space-y-1.5'>
+                <Label htmlFor='framework'>Framework</Label>
+                <Select>
+                  <SelectTrigger id='framework'>
+                    <SelectValue placeholder='Select' />
+                  </SelectTrigger>
+                  <SelectContent position='popper'>
+                    <SelectItem value='next'>Next.js</SelectItem>
+                    <SelectItem value='sveltekit'>SvelteKit</SelectItem>
+                    <SelectItem value='astro'>Astro</SelectItem>
+                    <SelectItem value='nuxt'>Nuxt.js</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+          </form>
         </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
+        <CardFooter className='flex justify-between'>
+          <Button variant='outline'>Cancel</Button>
+          <Button>Deploy</Button>
         </CardFooter>
-      </>
-    ),
+      </Card>
+    );
   },
 };

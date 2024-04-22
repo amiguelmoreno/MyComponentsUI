@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from ".";
 import { Button } from "../Button";
 
-const meta: Meta<typeof TooltipProvider> = {
+const meta: Meta<typeof Tooltip> = {
   title: "Components/Tooltip",
-  component: TooltipProvider,
+  component: Tooltip,
   parameters: {
     layout: "centered",
   },
@@ -13,19 +13,21 @@ const meta: Meta<typeof TooltipProvider> = {
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Tooltip>;
 
 export const Default: Story = {
-  args: {
-    children: (
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Button variant='default'>Hover</Button>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>Add to library</p>
-        </TooltipContent>
-      </Tooltip>
-    ),
+  render: () => {
+    return (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant='default'>Hover</Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Add to library</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    );
   },
 };

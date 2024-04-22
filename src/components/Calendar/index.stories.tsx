@@ -14,4 +14,8 @@ export default meta;
 
 type Story = StoryObj<typeof Calendar>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  render: () => {
+    return <Calendar showOutsideDays={true} />;
+  },
+};

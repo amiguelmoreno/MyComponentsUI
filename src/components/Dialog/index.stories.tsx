@@ -7,6 +7,10 @@ import {
   DialogTitle,
   DialogDescription,
 } from ".";
+import { Button } from "../Button";
+import { Label } from "../Label";
+import { Input } from "../Input";
+import { AlertDialogFooter } from "../AlertDialog";
 
 const meta: Meta<typeof Dialog> = {
   title: "Components/Dialog",
@@ -22,20 +26,46 @@ export default meta;
 type Story = StoryObj<typeof Dialog>;
 
 export const Default: Story = {
-  args: {
-    children: (
-      <>
-        <DialogTrigger>Open</DialogTrigger>
-        <DialogContent>
+  render: () => {
+    return (
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant='outline'>Edit Profile</Button>
+        </DialogTrigger>
+        <DialogContent className='sm:max-w-[425px]'>
           <DialogHeader>
-            <DialogTitle>Are you absolutely sure?</DialogTitle>
+            <DialogTitle>Edit profile</DialogTitle>
             <DialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
+              Make changes to your profile here. Click save when you're done.
             </DialogDescription>
           </DialogHeader>
+          <div className='grid gap-4 py-4'>
+            <div className='grid grid-cols-4 items-center gap-4'>
+              <Label htmlFor='name' className='text-right'>
+                Name
+              </Label>
+              <Input
+                id='name'
+                defaultValue='Pedro Duarte'
+                className='col-span-3'
+              />
+            </div>
+            <div className='grid grid-cols-4 items-center gap-4'>
+              <Label htmlFor='username' className='text-right'>
+                Username
+              </Label>
+              <Input
+                id='username'
+                defaultValue='@peduarte'
+                className='col-span-3'
+              />
+            </div>
+          </div>
+          <AlertDialogFooter>
+            <Button type='submit'>Save changes</Button>
+          </AlertDialogFooter>
         </DialogContent>
-      </>
-    ),
+      </Dialog>
+    );
   },
 };

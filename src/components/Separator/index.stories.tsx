@@ -15,5 +15,5 @@ export default meta;
 type Story = StoryObj<typeof Separator>;
 
 export const Default: Story = {
-  render: () => <Separator />,
+  render: () => <Separator className='w-48 h-1 rounded-full' />,
 };

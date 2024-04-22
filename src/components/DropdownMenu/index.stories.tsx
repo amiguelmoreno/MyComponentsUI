@@ -22,9 +22,9 @@ export default meta;
 type Story = StoryObj<typeof DropdownMenu>;
 
 export const Default: Story = {
-  args: {
-    children: (
-      <>
+  render: () => {
+    return (
+      <DropdownMenu>
         <DropdownMenuTrigger>Open</DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -34,7 +34,7 @@ export const Default: Story = {
           <DropdownMenuItem>Team</DropdownMenuItem>
           <DropdownMenuItem>Subscription</DropdownMenuItem>
         </DropdownMenuContent>
-      </>
-    ),
+      </DropdownMenu>
+    );
   },
 };

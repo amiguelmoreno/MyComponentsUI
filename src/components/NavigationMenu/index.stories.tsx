@@ -12,7 +12,7 @@ import { Pencil } from "lucide-react";
 import { ListItem, components } from "./exampledata";
 
 const meta: Meta<typeof NavigationMenu> = {
-  title: "Components/NavigationMenu",
+  title: "Components/Navigation Menu",
   component: NavigationMenu,
   parameters: {
     layout: "centered",

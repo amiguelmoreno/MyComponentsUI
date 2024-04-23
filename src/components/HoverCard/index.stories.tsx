@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "../Avatar";
 import { CalendarDays } from "lucide-react";
 
 const meta: Meta<typeof HoverCard> = {
-  title: "Components/HoverCard",
+  title: "Components/Hover Card",
   component: HoverCard,
   parameters: {
     layout: "centered",

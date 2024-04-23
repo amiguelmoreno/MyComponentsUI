@@ -13,6 +13,20 @@ const meta: Meta<typeof Accordion> = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  argTypes: {
+    type: {
+      control: { type: "select" },
+      options: ["single", "multiple"],
+      description:
+        "Change if only one or multiple tabs can be opened at the same time",
+      table: {
+        defaultValue: { summary: "single" },
+      },
+    },
+  },
+  args: {
+    type: "single",
+  },
 };
 
 export default meta;
@@ -20,9 +34,9 @@ export default meta;
 type Story = StoryObj<typeof Accordion>;
 
 export const Default: Story = {
-  render: () => {
+  render: ({ ...args }) => {
     return (
-      <Accordion type='single' collapsible className='w-[700px]'>
+      <Accordion type={args.type} collapsible className='w-[700px]'>
         <AccordionItem value='item-1'>
           <AccordionTrigger>Is it accessible?</AccordionTrigger>
           <AccordionContent>

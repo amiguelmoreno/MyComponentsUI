@@ -4,6 +4,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  core: {
+    builder: "@storybook/builder-vite", // 👈 The builder enabled here.
+  },
   addons: [
     "@storybook/addon-onboarding",
     "@storybook/addon-links",

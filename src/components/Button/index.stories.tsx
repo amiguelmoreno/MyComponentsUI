@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Mail, PlayIcon } from "lucide-react";
+import { Loader2, Mail, SendHorizontal } from "lucide-react";
 import { Button } from ".";
 
 const meta: Meta<typeof Button> = {
@@ -9,6 +9,40 @@ const meta: Meta<typeof Button> = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  argTypes: {
+    variant: {
+      control: { type: "select" },
+      options: [
+        "default",
+        "destructive",
+        "outline",
+        "secondary",
+        "ghost",
+        "link",
+      ],
+      table: {
+        defaultValue: { summary: "default" },
+      },
+    },
+    size: {
+      control: { type: "select" },
+      options: ["default", "sm", "lg", "icon"],
+      table: {
+        defaultValue: { summary: "default" },
+      },
+    },
+    disabled: {
+      control: { type: "boolean" },
+      table: {
+        defaultValue: { summary: "true" },
+      },
+    },
+  },
+  args: {
+    variant: "default",
+    size: "default",
+    disabled: false,
+  },
 };
 
 export default meta;
@@ -16,33 +50,61 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
-  args: {
-    variant: "default",
-    size: "default",
-    children: "Button",
+  render: ({ ...args }) => {
+    return (
+      <Button variant={args.variant} size={args.size} disabled={args.disabled}>
+        Button
+      </Button>
+    );
   },
 };
 
 export const WithIcon: Story = {
-  args: {
-    variant: "default",
-    size: "default",
-    children: (
-      <>
-        <Mail className='mr-2 h-4 w-4' />
+  render: () => {
+    return (
+      <Button>
+        <Mail strokeWidth={2.5} className='mr-2 h-4 w-4' />
         Button with icon
-      </>
-    ),
+      </Button>
+    );
   },
 };
 
 export const Icon: Story = {
-  args: {
-    variant: "default",
-    size: "icon",
-    children: <PlayIcon className='h-4 w-4'></PlayIcon>,
-    onClick: () => {
-      console.log("a");
-    },
+  render: () => {
+    return (
+      <Button>
+        <SendHorizontal className='h-5 w-5' />
+      </Button>
+    );
   },
 };
+
+export const Loading: Story = {
+  render: () => {
+    return (
+      <Button disabled>
+        <Loader2 className='mr-2 h-4 w-4 animate-spin' />
+        Please wait
+      </Button>
+    );
+  },
+};
+
+export const AsChild: Story = {
+  render: () => {
+    return (
+      <Button asChild>
+        <a>Login</a>
+      </Button>
+    );
+  },
+};
+
+{
+  /* 
+  CODE TO USAGE
+<Button asChild>
+<Link href="/login">Login</Link>
+</Button> */
+}

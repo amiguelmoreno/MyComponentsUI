@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
+
   argTypes: {
     variant: {
       control: { type: "select" },
@@ -100,11 +100,3 @@ export const AsChild: Story = {
     );
   },
 };
-
-{
-  /* 
-  CODE TO USAGE
-<Button asChild>
-<Link href="/login">Login</Link>
-</Button> */
-}

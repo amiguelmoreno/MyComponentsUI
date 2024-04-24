@@ -7,7 +7,6 @@ const meta: Meta<typeof Textarea> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 };
 
 export default meta;
@@ -15,5 +14,7 @@ export default meta;
 type Story = StoryObj<typeof Textarea>;
 
 export const Default: Story = {
-  render: () => <Textarea />,
+  render: () => (
+    <Textarea placeholder='Type your message here.' className='w-[300px]' />
+  ),
 };

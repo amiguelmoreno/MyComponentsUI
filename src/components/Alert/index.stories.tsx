@@ -8,7 +8,7 @@ const meta: Meta<typeof Alert> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
+
   argTypes: {
     variant: {
       control: { type: "select" },
@@ -17,15 +17,8 @@ const meta: Meta<typeof Alert> = {
         defaultValue: { summary: "default" },
       },
     },
-    className: {
-      control: { type: "text" },
-      description: "Add tailwind styles",
-      table: {
-        defaultValue: { summary: "" },
-      },
-    },
   },
-  args: { variant: "default", className: "" },
+  args: { variant: "default" },
 };
 
 export default meta;
@@ -35,7 +28,7 @@ type Story = StoryObj<typeof Alert>;
 export const Default: Story = {
   render: ({ ...args }) => {
     return (
-      <Alert variant={args.variant} className={args.className}>
+      <Alert variant={args.variant}>
         <Terminal className='h-4 w-4' />
         <AlertTitle>Heads up!</AlertTitle>
         <AlertDescription>
@@ -47,7 +40,7 @@ export const Default: Story = {
 };
 
 export const Destructive: Story = {
-  render: () => {
+  render: ({ ...args }) => {
     return (
       <Alert variant='destructive'>
         <Terminal className='h-4 w-4' />

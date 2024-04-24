@@ -11,7 +11,6 @@ const meta: Meta<typeof HoverCard> = {
     layout: "centered",
     docs: { story: { height: "200px" } },
   },
-  tags: ["autodocs"],
 };
 
 export default meta;

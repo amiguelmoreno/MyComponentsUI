@@ -21,7 +21,7 @@ const meta: Meta<typeof Checkbox> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
+
   argTypes: {
     checked: {
       control: { type: "boolean" },
@@ -42,7 +42,7 @@ export const Default: Story = {
 };
 
 export const WithText: Story = {
-  render: () => (
+  render: ({ ...args }) => (
     <div className='items-top flex space-x-2'>
       <Checkbox id='terms1' />
       <div className='grid gap-1.5 leading-none'>
@@ -61,7 +61,7 @@ export const WithText: Story = {
 };
 
 export const Disabled: Story = {
-  render: () => (
+  render: ({ ...args }) => (
     <div className='flex items-center space-x-2'>
       <Checkbox id='terms2' disabled />
       <label
@@ -74,10 +74,6 @@ export const Disabled: Story = {
   ),
 };
 
-const FormSchema = z.object({
-  mobile: z.boolean().default(false).optional(),
-});
-
 export const FormCheckbox: Story = {
   decorators: [
     (Story) => (
@@ -88,6 +84,10 @@ export const FormCheckbox: Story = {
     ),
   ],
   render: () => {
+    const FormSchema = z.object({
+      mobile: z.boolean().default(false).optional(),
+    });
+
     const form = useForm<z.infer<typeof FormSchema>>({
       resolver: zodResolver(FormSchema),
       defaultValues: {

@@ -21,7 +21,6 @@ const meta: Meta<typeof Menubar> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 };
 
 export default meta;

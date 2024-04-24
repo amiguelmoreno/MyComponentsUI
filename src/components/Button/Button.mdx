@@ -1,0 +1,86 @@
+import { Canvas, Meta, Story, Controls } from "@storybook/blocks";
+
+import * as ComponentStories from "./index.stories.tsx";
+
+<Meta of={ComponentStories} />
+
+# Button
+
+Displays a button or a component that looks like a button.
+
+<Canvas of={ComponentStories.Default} />
+
+<Controls />
+
+## Usage
+
+```tsx
+import { Button } from "mycomponentsui";
+```
+
+```tsx
+<Button>Button</Button>
+```
+
+## Examples
+
+### WithIcon
+
+<Canvas of={ComponentStories.WithIcon} />
+
+```tsx
+import { Button } from "mycomponentsui";
+import { Mail } from "lucide-react";
+```
+
+```tsx
+<Button>
+  <Mail strokeWidth={2.5} className='mr-2 h-4 w-4' />
+  Button with icon
+</Button>
+```
+
+### Icon
+
+<Canvas of={ComponentStories.Icon} />
+
+```tsx
+import { Button } from "mycomponentsui";
+import { SendHorizontal } from "lucide-react";
+```
+
+```tsx
+<Button>
+  <SendHorizontal className='h-5 w-5' />
+</Button>
+```
+
+### Loading
+
+<Canvas of={ComponentStories.Loading} />
+
+```tsx
+import { Button } from "mycomponentsui";
+import { Loader2 } from "lucide-react";
+```
+
+```tsx
+<Button disabled>
+  <Loader2 className='mr-2 h-4 w-4 animate-spin' />
+  Please wait
+</Button>
+```
+
+### AsChild
+
+<Canvas of={ComponentStories.AsChild} />
+
+```tsx
+import { Button } from "mycomponentsui";
+```
+
+```tsx
+<Button asChild>
+  <a href='/login'>Login</a>
+</Button>
+```

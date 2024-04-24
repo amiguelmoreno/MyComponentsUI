@@ -1,0 +1,188 @@
+import { Canvas, Meta, Story, Controls } from "@storybook/blocks";
+
+import * as ComponentStories from "./index.stories.tsx";
+
+<Meta of={ComponentStories} />
+
+# Carousel
+
+A carousel with motion and swipe built using Embla. Visit [Docs](https://www.embla-carousel.com/get-started/react/) to know every detail.
+
+<Canvas of={ComponentStories.Default} />
+
+<Controls />
+
+## Usage
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  CarouselApi,
+  Card,
+  CardContent,
+} from "mycomponentsui";
+```
+
+```tsx
+<Carousel className='w-full max-w-xs'>
+  <CarouselContent>
+    {Array.from({ length: 5 }).map((_, index) => (
+      <CarouselItem key={index}>
+        <div className='p-1'>
+          <Card>
+            <CardContent className='flex aspect-square items-center justify-center p-6'>
+              <span className='text-4xl font-semibold'>{index + 1}</span>
+            </CardContent>
+          </Card>
+        </div>
+      </CarouselItem>
+    ))}
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+```
+
+## Examples
+
+### Sizes
+
+<Canvas of={ComponentStories.Sizes} />
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  CarouselApi,
+  Card,
+  CardContent,
+} from "mycomponentsui";
+```
+
+```tsx
+<Carousel
+  opts={{
+    align: "center",
+  }}
+  orientation='vertical'
+  className=' max-w-xs m-10'
+>
+  <CarouselContent className='-mt-1 h-[200px]'>
+    {Array.from({ length: 5 }).map((_, index) => (
+      <CarouselItem
+        key={index}
+        className='flex items-center justify-center pt-1 '
+      >
+        <div className='p-1'>
+          <Card>
+            <CardContent className='flex min-w-[300px] items-center justify-center p-6'>
+              <span className='text-3xl font-semibold'>{index + 1}</span>
+            </CardContent>
+          </Card>
+        </div>
+      </CarouselItem>
+    ))}
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+```
+
+### Orientation
+
+<Canvas of={ComponentStories.Orientation} />
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  CarouselApi,
+  Card,
+  CardContent,
+} from "mycomponentsui";
+```
+
+```tsx
+<Carousel
+  opts={{
+    align: "center",
+  }}
+  orientation='vertical'
+  className=' max-w-xs m-10'
+>
+  <CarouselContent className='-mt-1 h-[200px]'>
+    {Array.from({ length: 5 }).map((_, index) => (
+      <CarouselItem
+        key={index}
+        className='flex items-center justify-center pt-1 '
+      >
+        <div className='p-1'>
+          <Card>
+            <CardContent className='flex min-w-[300px] items-center justify-center p-6'>
+              <span className='text-3xl font-semibold'>{index + 1}</span>
+            </CardContent>
+          </Card>
+        </div>
+      </CarouselItem>
+    ))}
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+```
+
+### Api
+
+<Canvas of={ComponentStories.Api} />
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  CarouselApi,
+  Card,
+  CardContent,
+} from "mycomponentsui";
+```
+
+```tsx
+<Carousel
+  opts={{
+    align: "center",
+  }}
+  orientation='vertical'
+  className=' max-w-xs m-10'
+>
+  <CarouselContent className='-mt-1 h-[200px]'>
+    {Array.from({ length: 5 }).map((_, index) => (
+      <CarouselItem
+        key={index}
+        className='flex items-center justify-center pt-1 '
+      >
+        <div className='p-1'>
+          <Card>
+            <CardContent className='flex min-w-[300px] items-center justify-center p-6'>
+              <span className='text-3xl font-semibold'>{index + 1}</span>
+            </CardContent>
+          </Card>
+        </div>
+      </CarouselItem>
+    ))}
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+```

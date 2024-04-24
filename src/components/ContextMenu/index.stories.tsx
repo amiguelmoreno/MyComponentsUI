@@ -21,7 +21,6 @@ const meta: Meta<typeof ContextMenu> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 };
 
 export default meta;
@@ -32,7 +31,6 @@ export const Default: Story = {
   render: () => {
     return (
       <ContextMenu>
-        {" "}
         <ContextMenuTrigger>Right click</ContextMenuTrigger>
         <ContextMenuContent>
           <ContextMenuItem>Profile</ContextMenuItem>

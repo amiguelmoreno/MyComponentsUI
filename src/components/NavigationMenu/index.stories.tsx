@@ -18,7 +18,6 @@ const meta: Meta<typeof NavigationMenu> = {
     layout: "centered",
     docs: { story: { height: "500px" } },
   },
-  tags: ["autodocs"],
 };
 
 export default meta;

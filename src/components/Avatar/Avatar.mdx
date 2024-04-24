@@ -1,0 +1,47 @@
+import { Canvas, Meta, Story, Controls } from "@storybook/blocks";
+
+import * as ComponentStories from "./index.stories.tsx";
+
+<Meta of={ComponentStories} />
+
+# Avatar
+
+An image element with a fallback for representing the user.
+
+<Canvas of={ComponentStories.Default} />
+
+<Controls />
+
+## Usage
+
+```tsx
+import { Avatar, AvatarImage, AvatarFallback } from "mycomponentsui";
+import { User } from "lucide-react";
+```
+
+```tsx
+<Avatar className='w-20 h-20'>
+  <AvatarImage src='https://github.com/shadcn.png' alt='avatar' />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
+```
+
+## Examples
+
+### Fallback
+
+<Canvas of={ComponentStories.Fallback} />
+
+```tsx
+import { Avatar, AvatarImage, AvatarFallback } from "mycomponentsui";
+import { User } from "lucide-react";
+```
+
+```tsx
+<Avatar className='w-20 h-20'>
+  <AvatarImage src='NoImageFound' alt='avatar' />
+  <AvatarFallback>
+    <User className='w-10 h-10' />
+  </AvatarFallback>
+</Avatar>
+```

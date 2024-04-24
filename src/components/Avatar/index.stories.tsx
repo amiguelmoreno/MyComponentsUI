@@ -8,7 +8,6 @@ const meta: Meta<typeof Avatar> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 };
 
 export default meta;
@@ -30,7 +29,7 @@ export const Fallback: Story = {
   render: () => {
     return (
       <Avatar className='w-20 h-20'>
-        <AvatarImage src='' alt='avatar' />
+        <AvatarImage src='NoImageFound' alt='avatar' />
         <AvatarFallback>
           <User className='w-10 h-10' />
         </AvatarFallback>

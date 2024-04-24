@@ -1,0 +1,23 @@
+import { Canvas, Meta, Story, Controls } from "@storybook/blocks";
+
+import * as ComponentStories from "./index.stories.tsx";
+
+<Meta of={ComponentStories} />
+
+# Calendar
+
+A date field component that allows users to enter and edit date.
+
+<Canvas of={ComponentStories.Default} />
+
+<Controls />
+
+## Usage
+
+```tsx
+import { Calendar } from "mycomponentsui";
+```
+
+```tsx
+<Calendar />
+```

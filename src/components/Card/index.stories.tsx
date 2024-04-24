@@ -24,7 +24,6 @@ const meta: Meta<typeof Card> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 };
 
 export default meta;

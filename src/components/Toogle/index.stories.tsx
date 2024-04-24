@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Toggle } from ".";
-import { Bold, ClipboardCheck, Italic, Underline } from "lucide-react";
+import { Bold, Italic, Underline } from "lucide-react";
 
 const meta: Meta<typeof Toggle> = {
   title: "Components/Toggle",
@@ -8,7 +8,7 @@ const meta: Meta<typeof Toggle> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
+
   argTypes: {
     variant: {
       control: { type: "select" },

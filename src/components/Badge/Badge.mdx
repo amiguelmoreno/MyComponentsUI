@@ -1,0 +1,49 @@
+import { Canvas, Meta, Story, Controls } from "@storybook/blocks";
+
+import * as ComponentStories from "./index.stories.tsx";
+
+<Meta of={ComponentStories} />
+
+# Badge
+
+Displays a badge or a component that looks like a badge.
+
+<Canvas of={ComponentStories.Default} />
+
+<Controls />
+
+## Usage
+
+```tsx
+import { Badge } from "mycomponentsui";
+```
+
+```tsx
+<Badge>Badge</Badge>
+```
+
+## Examples
+
+### Secondary
+
+<Canvas of={ComponentStories.Secondary} />
+
+```tsx
+<Badge variant='secondary'>Badge</Badge>
+```
+
+### Outline
+
+<Canvas of={ComponentStories.Outline} />
+
+```tsx
+<Badge variant='outline'>Badge</Badge>
+```
+
+### Destructive
+
+<Canvas of={ComponentStories.Destructive} />
+
+```tsx
+<Badge variant='destructive'>Badge</Badge>
+```

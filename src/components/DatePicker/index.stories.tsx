@@ -36,7 +36,6 @@ const meta: Meta<typeof Popover> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 };
 
 export default meta;
@@ -165,12 +164,6 @@ export const WithPresets: Story = {
   },
 };
 
-const FormSchema = z.object({
-  dob: z.date({
-    required_error: "A date of birth is required.",
-  }),
-});
-
 export const InForm: Story = {
   decorators: [
     (Story) => (
@@ -181,6 +174,12 @@ export const InForm: Story = {
     ),
   ],
   render: () => {
+    const FormSchema = z.object({
+      dob: z.date({
+        required_error: "A date of birth is required.",
+      }),
+    });
+
     const form = useForm<z.infer<typeof FormSchema>>({
       resolver: zodResolver(FormSchema),
     });

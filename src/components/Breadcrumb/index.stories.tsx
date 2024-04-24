@@ -14,7 +14,6 @@ const meta: Meta<typeof Breadcrumb> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 };
 
 export default meta;
@@ -27,11 +26,11 @@ export const Default: Story = {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href='#'>Home</BreadcrumbLink>
+            <BreadcrumbLink>Home</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink href='#'>Components</BreadcrumbLink>
+            <BreadcrumbLink>Components</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>

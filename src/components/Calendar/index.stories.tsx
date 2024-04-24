@@ -7,7 +7,7 @@ const meta: Meta<typeof Calendar> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
+
   argTypes: {
     showOutsideDays: {
       control: { type: "boolean" },

@@ -12,7 +12,6 @@ const meta: Meta<typeof Accordion> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
   argTypes: {
     type: {
       control: { type: "select" },
@@ -36,7 +35,7 @@ type Story = StoryObj<typeof Accordion>;
 export const Default: Story = {
   render: ({ ...args }) => {
     return (
-      <Accordion type={args.type} collapsible className='w-[700px]'>
+      <Accordion type={args.type} collapsible className='w-[500px]'>
         <AccordionItem value='item-1'>
           <AccordionTrigger>Is it accessible?</AccordionTrigger>
           <AccordionContent>

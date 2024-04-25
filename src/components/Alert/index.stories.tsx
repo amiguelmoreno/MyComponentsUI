@@ -40,7 +40,7 @@ export const Default: Story = {
 };
 
 export const Destructive: Story = {
-  render: ({ ...args }) => {
+  render: () => {
     return (
       <Alert variant='destructive'>
         <Terminal className='h-4 w-4' />

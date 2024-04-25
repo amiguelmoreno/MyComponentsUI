@@ -42,7 +42,7 @@ export const Default: Story = {
 };
 
 export const WithText: Story = {
-  render: ({ ...args }) => (
+  render: () => (
     <div className='items-top flex space-x-2'>
       <Checkbox id='terms1' />
       <div className='grid gap-1.5 leading-none'>
@@ -61,7 +61,7 @@ export const WithText: Story = {
 };
 
 export const Disabled: Story = {
-  render: ({ ...args }) => (
+  render: () => (
     <div className='flex items-center space-x-2'>
       <Checkbox id='terms2' disabled />
       <label

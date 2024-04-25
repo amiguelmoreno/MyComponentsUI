@@ -5,7 +5,7 @@ export {
   TooltipContent,
   TooltipProvider,
 } from "./Tooltip";
-export { Toggle } from "./Toogle";
+export { Toggle } from "./Toggle";
 export {
   Accordion,
   AccordionItem,

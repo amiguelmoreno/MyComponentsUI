@@ -4,9 +4,9 @@ import * as ComponentStories from "./index.stories.tsx";
 
 <Meta of={ComponentStories} />
 
-# Alert
+# Input
 
-Displays a callout for user attention.
+Displays a form input field or a component that looks like an input field.
 
 <Canvas of={ComponentStories.Default} />
 
@@ -15,37 +15,143 @@ Displays a callout for user attention.
 ## Usage
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { Input } from "mycomponentsui";
 ```
 
 ```tsx
-<Alert>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<Input type='email' placeholder='Email' />
 ```
 
 ## Examples
 
-### Destructive
+### File
 
-<Canvas of={ComponentStories.Destructive} />
+<Canvas of={ComponentStories.File} />
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { Input, Label } from "mycomponentsui";
 ```
 
 ```tsx
-<Alert variant='destructive'>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<div className='grid w-full max-w-sm items-center gap-1.5'>
+  <Label htmlFor='picture'>Picture</Label>
+  <Input id='picture' type='file' />
+</div>
+```
+
+### Disable
+
+<Canvas of={ComponentStories.Disable} />
+
+```tsx
+import { Input } from "mycomponentsui";
+```
+
+```tsx
+<Input disabled type='email' placeholder='Email' />
+```
+
+### With Label
+
+<Canvas of={ComponentStories.WithLabel} />
+
+```tsx
+import { Input, Label } from "mycomponentsui";
+```
+
+```tsx
+<div className='grid w-full max-w-sm items-center gap-1.5'>
+  <Label htmlFor='email'>Email</Label>
+  <Input type='email' id='email' placeholder='Email' />
+</div>
+```
+
+### With Button
+
+<Canvas of={ComponentStories.WithButton} />
+
+```tsx
+import { Input, Button } from "mycomponentsui";
+```
+
+```tsx
+<div className='flex w-full max-w-sm items-center space-x-2'>
+  <Input type='email' placeholder='Email' />
+  <Button type='submit'>Subscribe</Button>
+</div>
+```
+
+### In Form
+
+<Canvas of={ComponentStories.InForm} />
+
+```tsx
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { toast } from "@/components/ui/use-toast";
+
+const FormSchema = z.object({
+  username: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+});
+
+export function InputForm() {
+  const form = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      username: "",
+    },
+  });
+
+  function onSubmit(data: z.infer<typeof FormSchema>) {
+    toast({
+      title: "You submitted the following values:",
+      description: (
+        <pre className='mt-2 w-[340px] rounded-md bg-slate-950 p-4'>
+          <code className='text-white'>{JSON.stringify(data, null, 2)}</code>
+        </pre>
+      ),
+    });
+  }
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='w-2/3 space-y-6'>
+        <FormField
+          control={form.control}
+          name='username'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Username</FormLabel>
+              <FormControl>
+                <Input placeholder='shadcn' {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your public display name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type='submit'>Submit</Button>
+      </form>
+    </Form>
+  );
+}
 ```

@@ -4,9 +4,9 @@ import * as ComponentStories from "./index.stories.tsx";
 
 <Meta of={ComponentStories} />
 
-# Alert
+# Tooltip
 
-Displays a callout for user attention.
+A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
 
 <Canvas of={ComponentStories.Default} />
 
@@ -20,32 +20,14 @@ import { Terminal } from "lucide-react";
 ```
 
 ```tsx
-<Alert>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
-```
-
-## Examples
-
-### Destructive
-
-<Canvas of={ComponentStories.Destructive} />
-
-```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
-```
-
-```tsx
-<Alert variant='destructive'>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button variant='default'>Hover</Button>
+    </TooltipTrigger>
+    <TooltipContent>
+      <p>Add to library</p>
+    </TooltipContent>
+  </Tooltip>
+</TooltipProvider>
 ```

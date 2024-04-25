@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../Button";
 import { useToast } from "./use-toast";
 import { Toaster } from "./toaster";
-import { Divide } from "lucide-react";
 import { ToastAction } from ".";
 
 const meta: Meta<typeof Button> = {
@@ -46,7 +45,7 @@ export const Default: Story = {
   },
 };
 
-export const WitTitle: Story = {
+export const WithTitle: Story = {
   render: () => {
     const { toast } = useToast();
     return (

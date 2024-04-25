@@ -4,9 +4,9 @@ import * as ComponentStories from "./index.stories.tsx";
 
 <Meta of={ComponentStories} />
 
-# Alert
+# Slider
 
-Displays a callout for user attention.
+An input where the user selects a value from within a given range.
 
 <Canvas of={ComponentStories.Default} />
 
@@ -15,37 +15,9 @@ Displays a callout for user attention.
 ## Usage
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { Slider } from "mycomponentsui";
 ```
 
 ```tsx
-<Alert>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
-```
-
-## Examples
-
-### Destructive
-
-<Canvas of={ComponentStories.Destructive} />
-
-```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
-```
-
-```tsx
-<Alert variant='destructive'>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<Slider className='w-48' defaultValue={[33]} max={100} step={1} />
 ```

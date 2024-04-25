@@ -4,9 +4,9 @@ import * as ComponentStories from "./index.stories.tsx";
 
 <Meta of={ComponentStories} />
 
-# Alert
+# Pagination
 
-Displays a callout for user attention.
+Pagination with page navigation, next and previous links.
 
 <Canvas of={ComponentStories.Default} />
 
@@ -15,37 +15,34 @@ Displays a callout for user attention.
 ## Usage
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "mycomponentsui";
 ```
 
 ```tsx
-<Alert>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
-```
-
-## Examples
-
-### Destructive
-
-<Canvas of={ComponentStories.Destructive} />
-
-```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
-```
-
-```tsx
-<Alert variant='destructive'>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious href='#' onClick={preventDefault} />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href='#' onClick={preventDefault}>
+        1
+      </PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationEllipsis />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext href='#' onClick={preventDefault} />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>
 ```

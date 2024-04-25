@@ -4,9 +4,9 @@ import * as ComponentStories from "./index.stories.tsx";
 
 <Meta of={ComponentStories} />
 
-# Alert
+# Skeleton
 
-Displays a callout for user attention.
+Use to show a placeholder while content is loading.
 
 <Canvas of={ComponentStories.Default} />
 
@@ -15,37 +15,35 @@ Displays a callout for user attention.
 ## Usage
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { Skeleton } from "mycomponentsui";
 ```
 
 ```tsx
-<Alert>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<div className='flex items-center space-x-4'>
+  <Skeleton className='h-12 w-12 rounded-full' />
+  <div className='space-y-2'>
+    <Skeleton className='h-4 w-[250px]' />
+    <Skeleton className='h-4 w-[200px]' />
+  </div>
+</div>
 ```
 
 ## Examples
 
-### Destructive
+### Other Form
 
-<Canvas of={ComponentStories.Destructive} />
+<Canvas of={ComponentStories.OtherForms} />
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { Skeleton } from "mycomponentsui";
 ```
 
 ```tsx
-<Alert variant='destructive'>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<div className='flex flex-col space-y-3'>
+  <Skeleton className='h-[125px] w-[250px] rounded-xl' />
+  <div className='space-y-2'>
+    <Skeleton className='h-4 w-[250px]' />
+    <Skeleton className='h-4 w-[200px]' />
+  </div>
+</div>
 ```

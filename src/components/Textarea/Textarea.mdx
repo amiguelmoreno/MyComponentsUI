@@ -4,9 +4,9 @@ import * as ComponentStories from "./index.stories.tsx";
 
 <Meta of={ComponentStories} />
 
-# Alert
+# Text Area
 
-Displays a callout for user attention.
+Displays a form textarea or a component that looks like a textarea.
 
 <Canvas of={ComponentStories.Default} />
 
@@ -15,37 +15,59 @@ Displays a callout for user attention.
 ## Usage
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { Textarea } from "mycomponentsui";
 ```
 
 ```tsx
-<Alert>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<Textarea placeholder='Type your message here.' className='w-[300px]' />
 ```
 
 ## Examples
 
-### Destructive
+### With Label
 
-<Canvas of={ComponentStories.Destructive} />
+<Canvas of={ComponentStories.WithLabel} />
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { Textarea, Label } from "mycomponentsui";
 ```
 
 ```tsx
-<Alert variant='destructive'>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<div className='grid w-full gap-1.5'>
+  <Label htmlFor='message'>Your message</Label>
+  <Textarea placeholder='Type your message here.' id='message' />
+</div>
+```
+
+### With Text
+
+<Canvas of={ComponentStories.WithText} />
+
+```tsx
+import { Textarea, Label } from "mycomponentsui";
+```
+
+```tsx
+<div className='grid w-full gap-1.5'>
+  <Label htmlFor='message-2'>Your Message</Label>
+  <Textarea placeholder='Type your message here.' id='message-2' />
+  <p className='text-sm text-muted-foreground'>
+    Your message will be copied to the support team.
+  </p>
+</div>
+```
+
+### WithButton
+
+<Canvas of={ComponentStories.WithButton} />
+
+```tsx
+import { Textarea, Button } from "mycomponentsui";
+```
+
+```tsx
+<div className='grid w-full gap-2'>
+  <Textarea placeholder='Type your message here.' />
+  <Button>Send message</Button>
+</div>
 ```

@@ -4,9 +4,9 @@ import * as ComponentStories from "./index.stories.tsx";
 
 <Meta of={ComponentStories} />
 
-# Alert
+# Toggle
 
-Displays a callout for user attention.
+A two-state button that can be either on or off.
 
 <Canvas of={ComponentStories.Default} />
 
@@ -15,37 +15,37 @@ Displays a callout for user attention.
 ## Usage
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { Toggle } from "mycomponentsui";
+import { Bold } from "lucide-react";
 ```
 
 ```tsx
-<Alert>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<Toggle {...args}>
+  <Bold className='h-4 w-4' />
+</Toggle>
 ```
 
 ## Examples
 
-### Destructive
+### Group
 
-<Canvas of={ComponentStories.Destructive} />
+<Canvas of={ComponentStories.Group} />
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { Toggle } from "mycomponentsui";
+import { Bold, Italic, Underline } from "lucide-react";
 ```
 
 ```tsx
-<Alert variant='destructive'>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<div className='flex gap-2'>
+  <Toggle variant={"outline"}>
+    <Italic className='h-4 w-4' />
+  </Toggle>
+  <Toggle variant={"outline"}>
+    <Bold className='h-4 w-4' />
+  </Toggle>
+  <Toggle variant={"outline"}>
+    <Underline className='h-4 w-4' />
+  </Toggle>
+</div>
 ```

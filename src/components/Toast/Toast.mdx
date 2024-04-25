@@ -4,48 +4,148 @@ import * as ComponentStories from "./index.stories.tsx";
 
 <Meta of={ComponentStories} />
 
-# Alert
+# Toast
 
-Displays a callout for user attention.
+A message that is displayed temporarily.
 
 <Canvas of={ComponentStories.Default} />
 
-<Controls />
-
 ## Usage
 
-```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
-```
+You have to add Toaster to your layout like this:
 
 ```tsx
-<Alert>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+import { Toaster } from "mycomponentsui";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang='en'>
+      <head />
+      <body>
+        <main>{children}</main>
+        <Toaster />
+      </body>
+    </html>
+  );
+}
+```
+
+Then you can add the toast in all of the children components
+
+```tsx
+"use client";
+
+import { Button } from "mycomponentsui";
+import { useToast } from "mycomponentsui";
+
+export function ToastSimple() {
+  const { toast } = useToast();
+
+  return (
+    <Button
+      variant='outline'
+      onClick={() => {
+        toast({
+          description: "Your message has been sent.",
+        });
+      }}
+    >
+      Show Toast
+    </Button>
+  );
+}
 ```
 
 ## Examples
+
+### With Title
+
+<Canvas of={ComponentStories.WithTitle} />
+
+```tsx
+"use client";
+
+import { Button } from "mycomponentsui";
+import { useToast } from "mycomponentsui";
+
+export function ToastWithTitle() {
+  const { toast } = useToast();
+
+  return (
+    <Button
+      variant='outline'
+      onClick={() => {
+        toast({
+          title: "Uh oh! Something went wrong.",
+          description: "There was a problem with your request.",
+        });
+      }}
+    >
+      Show Toast
+    </Button>
+  );
+}
+```
+
+### With Action
+
+<Canvas of={ComponentStories.WithAction} />
+
+```tsx
+"use client";
+
+import { Button } from "mycomponentsui";
+import { ToastAction } from "mycomponentsui";
+import { useToast } from "mycomponentsui";
+
+export function ToastWithAction() {
+  const { toast } = useToast();
+
+  return (
+    <Button
+      variant='outline'
+      onClick={() => {
+        toast({
+          title: "Uh oh! Something went wrong.",
+          description: "There was a problem with your request.",
+          action: <ToastAction altText='Try again'>Try again</ToastAction>,
+        });
+      }}
+    >
+      Show Toast
+    </Button>
+  );
+}
+```
 
 ### Destructive
 
 <Canvas of={ComponentStories.Destructive} />
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
-```
+"use client";
 
-```tsx
-<Alert variant='destructive'>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+import { Button } from "mycomponentsui";
+import { ToastAction } from "mycomponentsui";
+import { useToast } from "mycomponentsui";
+
+export function ToastDestructive() {
+  const { toast } = useToast();
+
+  return (
+    <Button
+      variant='outline'
+      onClick={() => {
+        toast({
+          variant: "destructive",
+          title: "Uh oh! Something went wrong.",
+          description: "There was a problem with your request.",
+          action: <ToastAction altText='Try again'>Try again</ToastAction>,
+        });
+      }}
+    >
+      Show Toast
+    </Button>
+  );
+}
 ```

@@ -9,7 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from ".";
-import { Label } from "@radix-ui/react-label";
+import { Label } from "../Label";
 import { Button } from "../Button";
 import { Input } from "../Input";
 

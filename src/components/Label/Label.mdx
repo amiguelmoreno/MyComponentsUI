@@ -4,9 +4,9 @@ import * as ComponentStories from "./index.stories.tsx";
 
 <Meta of={ComponentStories} />
 
-# Alert
+# Label
 
-Displays a callout for user attention.
+Renders an accessible label associated with controls.
 
 <Canvas of={ComponentStories.Default} />
 
@@ -15,37 +15,28 @@ Displays a callout for user attention.
 ## Usage
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { Label } from "mycomponentsui";
 ```
 
 ```tsx
-<Alert>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<Label htmlFor='email'>Your email address</Label>
 ```
 
 ## Examples
 
-### Destructive
+### InCheckbox
 
-<Canvas of={ComponentStories.Destructive} />
+<Canvas of={ComponentStories.InCheckbox} />
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { Label, Checkbox } from "mycomponentsui";
 ```
 
 ```tsx
-<Alert variant='destructive'>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<div>
+  <div className='flex items-center space-x-2'>
+    <Checkbox id='terms' />
+    <Label htmlFor='terms'>Accept terms and conditions</Label>
+  </div>
+</div>
 ```

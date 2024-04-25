@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../Card";
-import { Label } from "@radix-ui/react-label";
+import { Label } from "../Label";
 import { Input } from "../Input";
 
 const meta: Meta<typeof Tabs> = {

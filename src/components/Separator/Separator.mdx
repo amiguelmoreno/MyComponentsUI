@@ -4,9 +4,9 @@ import * as ComponentStories from "./index.stories.tsx";
 
 <Meta of={ComponentStories} />
 
-# Alert
+# Separator
 
-Displays a callout for user attention.
+Visually or semantically separates content.
 
 <Canvas of={ComponentStories.Default} />
 
@@ -15,37 +15,24 @@ Displays a callout for user attention.
 ## Usage
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { Separator } from "mycomponentsui";
 ```
 
 ```tsx
-<Alert>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
-```
-
-## Examples
-
-### Destructive
-
-<Canvas of={ComponentStories.Destructive} />
-
-```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
-```
-
-```tsx
-<Alert variant='destructive'>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<div>
+  <div className='space-y-1'>
+    <h4 className='text-sm font-medium leading-none'>Radix Primitives</h4>
+    <p className='text-sm text-muted-foreground'>
+      An open-source UI component library.
+    </p>
+  </div>
+  <Separator className='my-4' />
+  <div className='flex h-5 items-center space-x-4 text-sm'>
+    <div>Blog</div>
+    <Separator orientation='vertical' />
+    <div>Docs</div>
+    <Separator orientation='vertical' />
+    <div>Source</div>
+  </div>
+</div>
 ```

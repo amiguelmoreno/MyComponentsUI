@@ -27,7 +27,7 @@ type Story = StoryObj<typeof NavigationMenu>;
 export const Default: Story = {
   render() {
     return (
-      <div className='flex w-[700px]'>
+      <div className='flex w-[800px] items-center justify-center'>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>

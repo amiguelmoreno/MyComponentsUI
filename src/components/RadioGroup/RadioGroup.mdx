@@ -4,9 +4,9 @@ import * as ComponentStories from "./index.stories.tsx";
 
 <Meta of={ComponentStories} />
 
-# Alert
+# Radio Group
 
-Displays a callout for user attention.
+A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
 
 <Canvas of={ComponentStories.Default} />
 
@@ -15,37 +15,18 @@ Displays a callout for user attention.
 ## Usage
 
 ```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
+import { RadioGroup, RadioGroupItem, Label } from "mycomponentsui";
 ```
 
 ```tsx
-<Alert>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
-```
-
-## Examples
-
-### Destructive
-
-<Canvas of={ComponentStories.Destructive} />
-
-```tsx
-import { Alert, AlertTitle, AlertDescription } from "mycomponentsui";
-import { Terminal } from "lucide-react";
-```
-
-```tsx
-<Alert variant='destructive'>
-  <Terminal className='h-4 w-4' />
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-  </AlertDescription>
-</Alert>
+<RadioGroup defaultValue='option-one'>
+  <div className='flex items-center space-x-2'>
+    <RadioGroupItem value='option-one' id='option-one' />
+    <Label htmlFor='option-one'>Option One</Label>
+  </div>
+  <div className='flex items-center space-x-2'>
+    <RadioGroupItem value='option-two' id='option-two' />
+    <Label htmlFor='option-two'>Option Two</Label>
+  </div>
+</RadioGroup>
 ```

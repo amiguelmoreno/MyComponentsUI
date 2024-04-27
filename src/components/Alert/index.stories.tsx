@@ -28,7 +28,7 @@ type Story = StoryObj<typeof Alert>;
 export const Default: Story = {
   render: ({ ...args }) => {
     return (
-      <Alert variant={args.variant}>
+      <Alert variant={args.variant} className='w-[400px]'>
         <Terminal className='h-4 w-4' />
         <AlertTitle>Heads up!</AlertTitle>
         <AlertDescription>
@@ -42,7 +42,7 @@ export const Default: Story = {
 export const Destructive: Story = {
   render: () => {
     return (
-      <Alert variant='destructive'>
+      <Alert variant='destructive' className='w-[400px]'>
         <Terminal className='h-4 w-4' />
         <AlertTitle>Heads up!</AlertTitle>
         <AlertDescription>

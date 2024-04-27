@@ -31,7 +31,9 @@ export const Default: Story = {
   render: () => {
     return (
       <ContextMenu>
-        <ContextMenuTrigger>Right click</ContextMenuTrigger>
+        <ContextMenuTrigger className='border p-5 rounded-sm'>
+          Right click
+        </ContextMenuTrigger>
         <ContextMenuContent>
           <ContextMenuItem>Profile</ContextMenuItem>
           <ContextMenuItem>Billing</ContextMenuItem>

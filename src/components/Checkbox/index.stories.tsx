@@ -108,7 +108,10 @@ export const FormCheckbox: Story = {
 
     return (
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6 m-36'>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className='space-y-6 w-[350px] m-36'
+        >
           <FormField
             control={form.control}
             name='mobile'

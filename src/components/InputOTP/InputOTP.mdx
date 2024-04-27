@@ -15,12 +15,7 @@ Accessible one-time password component with copy paste functionality.
 ## Usage
 
 ```tsx
-import {
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSeparator,
-  InputOTPSlot,
-} from "mycomponentsui";
+import { InputOTP, InputOTPGroup, InputOTPSlot } from "mycomponentsui";
 ```
 
 ```tsx
@@ -82,7 +77,7 @@ export function InputOTPControlled() {
   const [value, setValue] = React.useState("");
 
   return (
-    <div className='space-y-2'>
+    <div className='space-y-2 flex flex-col items-center justify-center'>
       <InputOTP
         maxLength={6}
         value={value}

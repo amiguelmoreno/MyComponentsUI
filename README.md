@@ -2,11 +2,9 @@
 
 This is a **React** components library which offers a wide variety of **fully accessible** components and a very minimalist design that allows you to **customize** every component.
 
-<br></br>
 
 ## Set up
 
-<br></br>
 
 #### **1. Install npm**
 

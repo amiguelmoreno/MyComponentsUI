@@ -8,7 +8,7 @@ import {
   FormItem,
   FormLabel,
 } from "../Form";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { toast } from "../Toast/use-toast";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";

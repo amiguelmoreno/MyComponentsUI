@@ -1,5 +1,5 @@
 import type { StoryObj } from "@storybook/react";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { useState } from "react";
 import {
   ColumnFiltersState,

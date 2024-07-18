@@ -9,10 +9,10 @@ import {
   DialogFooter,
   DialogClose,
 } from ".";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { Label } from "../Label";
 import { Input } from "../Input";
-import { AlertDialogFooter } from "../AlertDialog";
+import { AlertDialogFooter } from "../AlertDialog/AlertDialog";
 import { Copy } from "lucide-react";
 
 const meta: Meta<typeof Dialog> = {

@@ -10,7 +10,7 @@ import {
   SheetTrigger,
 } from ".";
 import { Label } from "../Label";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { Input } from "../Input";
 
 const meta: Meta<typeof Sheet> = {

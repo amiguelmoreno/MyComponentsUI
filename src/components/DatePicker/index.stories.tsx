@@ -5,7 +5,7 @@ import { addDays, format } from "date-fns";
 
 import { DateRange } from "react-day-picker";
 import { cn } from "../../../lib/utils";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { Calendar } from "../Calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "../Popover";
 import { useState } from "react";

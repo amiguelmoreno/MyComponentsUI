@@ -6,7 +6,7 @@ import {
   CarouselPrevious,
   CarouselNext,
   CarouselApi,
-} from ".";
+} from "./Carousel";
 import { Card, CardContent } from "../Card";
 import { useEffect, useState } from "react";
 
@@ -19,6 +19,7 @@ const meta: Meta<typeof Carousel> = {
 
   argTypes: {
     orientation: {
+      control: { type: "select" },
       options: ["horizontal", "vertical"],
       table: {
         defaultValue: { summary: "horizontal" },

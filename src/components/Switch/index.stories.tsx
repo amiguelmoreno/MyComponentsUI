@@ -12,7 +12,7 @@ import {
   Form,
 } from "../Form";
 import { toast } from "../Toast/use-toast";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { Toaster } from "../Toast/toaster";
 
 const meta: Meta<typeof Switch> = {

@@ -18,7 +18,7 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "../DropdownMenu";
+} from "../DropdownMenu/DropdownMenu";
 import { ChevronDown } from "lucide-react";
 import { data, columns } from ".";
 import {

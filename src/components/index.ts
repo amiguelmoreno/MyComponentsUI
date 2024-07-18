@@ -114,7 +114,7 @@ export {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuRadioGroup,
-} from "./DropdownMenu";
+} from "./DropdownMenu/DropdownMenu";
 
 export {
   useFormField,

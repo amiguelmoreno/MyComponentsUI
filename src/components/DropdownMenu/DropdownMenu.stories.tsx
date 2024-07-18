@@ -8,7 +8,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from ".";
+} from "./DropdownMenu";
 import { Button } from "../Button/Button";
 import { useState } from "react";
 

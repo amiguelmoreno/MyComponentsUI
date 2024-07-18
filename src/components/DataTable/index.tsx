@@ -12,7 +12,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../DropdownMenu";
+} from "../DropdownMenu/DropdownMenu";
 
 export const data: Payment[] = [
   {

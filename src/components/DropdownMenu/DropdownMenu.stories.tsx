@@ -8,8 +8,8 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from ".";
-import { Button } from "../Button";
+} from "./DropdownMenu";
+import { Button } from "../Button/Button";
 import { useState } from "react";
 
 const meta: Meta<typeof DropdownMenu> = {

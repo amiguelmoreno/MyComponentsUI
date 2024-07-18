@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Avatar, AvatarImage, AvatarFallback } from ".";
+import { Avatar, AvatarImage, AvatarFallback } from "./Avatar";
 import { User } from "lucide-react";
 
 const meta: Meta<typeof Avatar> = {

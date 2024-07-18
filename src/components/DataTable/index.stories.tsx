@@ -1,5 +1,5 @@
 import type { StoryObj } from "@storybook/react";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { useState } from "react";
 import {
   ColumnFiltersState,
@@ -18,7 +18,7 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "../DropdownMenu";
+} from "../DropdownMenu/DropdownMenu";
 import { ChevronDown } from "lucide-react";
 import { data, columns } from ".";
 import {

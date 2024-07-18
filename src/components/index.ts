@@ -3,8 +3,8 @@ export {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from "./Accordion";
-export { Alert, AlertTitle, AlertDescription } from "./Alert";
+} from "./Accordion/Accordion";
+export { Alert, AlertTitle, AlertDescription } from "./Alert/Alert";
 export {
   AlertDialog,
   AlertDialogPortal,
@@ -17,8 +17,8 @@ export {
   AlertDialogDescription,
   AlertDialogAction,
   AlertDialogCancel,
-} from "./AlertDialog";
-export { Avatar, AvatarImage, AvatarFallback } from "./Avatar";
+} from "./AlertDialog/AlertDialog";
+export { Avatar, AvatarImage, AvatarFallback } from "./Avatar/Avatar";
 export { Badge, badgeVariants } from "./Badge";
 export {
   Breadcrumb,
@@ -29,7 +29,7 @@ export {
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
 } from "./Breadcrumb";
-export { Button } from "./Button";
+export { Button } from "./Button/Button";
 
 export { Toggle } from "./Toggle";
 export {
@@ -55,7 +55,7 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-} from "./Carrousel";
+} from "./Carousel/Carousel";
 export { Checkbox } from "./Checkbox";
 export {
   Command,
@@ -114,7 +114,7 @@ export {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuRadioGroup,
-} from "./DropdownMenu";
+} from "./DropdownMenu/DropdownMenu";
 
 export {
   useFormField,

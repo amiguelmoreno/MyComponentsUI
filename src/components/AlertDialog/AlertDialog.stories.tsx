@@ -9,8 +9,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from ".";
-import { Button } from "../Button";
+} from "./AlertDialog";
+import { Button } from "../Button/Button";
 
 const meta: Meta<typeof AlertDialog> = {
   title: "Components/Alert Dialog",

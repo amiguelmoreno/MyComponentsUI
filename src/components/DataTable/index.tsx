@@ -3,7 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { Checkbox } from "../Checkbox";
 import {
   DropdownMenu,
@@ -12,7 +12,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../DropdownMenu";
+} from "../DropdownMenu/DropdownMenu";
 
 export const data: Payment[] = [
   {

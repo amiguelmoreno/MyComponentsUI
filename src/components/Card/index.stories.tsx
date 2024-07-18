@@ -16,7 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../Select";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 
 const meta: Meta<typeof Card> = {
   title: "Components/Card",
